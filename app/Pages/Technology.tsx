@@ -289,9 +289,7 @@ export default function Technology() {
           <div className="vilvom-content">
             <h2>What is Vilvom?</h2>
             <p>
-              Vilvom is a comprehensive platform for drone spraying in Indian tea plantations, making
-              advanced technology accessible to farmers. It empowers tea estates as drone operators,
-              ensuring efficient, cost-effective, and sustainable farming solutions.
+              Vilvom delivers comprehensive and efficient drone spraying solutions for India’s tea plantations, making precision aerial technology accessible and affordable for tea estate farmers.  The platform empowers tea estates with efficient, cost-effective, and sustainable farming solutions that enhance productivity and yields.
             </p>
           </div>
         </div>
