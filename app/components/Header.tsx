@@ -2,22 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Header() {
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "16px 32px",
-        width: "100%",
-      }}
-    >
+    <nav className={menuOpen ? "nav-open" : ""}>
       {/* Logo */}
       <Link
         href="/"
@@ -35,49 +26,84 @@ export default function Header() {
           width={180}
           height={180}
           priority
-          style={{
-            objectFit: "contain",
-          }}
+          style={{ objectFit: "contain" }}
         />
       </Link>
 
       {/* Navigation Menu */}
-      <ul
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "24px",
-          listStyle: "none",
-          margin: 0,
-          padding: 0,
-        }}
-      >
+      <ul>
         <li>
-          <Link href="/">Home</Link>
+          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
         </li>
-
         <li>
-          <a href="#technology">Technology</a>
+          <a href="#technology" onClick={() => setMenuOpen(false)}>Technology</a>
         </li>
-
         <li>
-          <a href="#pest">Pest Infestation</a>
+          <a href="#pest" onClick={() => setMenuOpen(false)}>Pest Infestation</a>
         </li>
-
         <li>
-          <a href="#solutions">Solutions</a>
+          <a href="#solutions" onClick={() => setMenuOpen(false)}>Solutions</a>
         </li>
-
         <li>
-          <a href="#blog">Insights</a>
+          <a href="#blog" onClick={() => setMenuOpen(false)}>Insights</a>
         </li>
-
         <li>
-          <a href="#contact" className="nav-cta">
+          <a href="#contact" className="nav-cta" onClick={() => setMenuOpen(false)}>
             Contact Us
           </a>
         </li>
       </ul>
+
+      {/* Hamburger button — hidden on desktop via CSS */}
+      <button
+        className="nav-hamburger"
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((prev) => !prev)}
+        style={{
+          display: "none",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: "8px",
+          flexDirection: "column",
+          gap: "5px",
+        }}
+      >
+        <span
+          style={{
+            display: "block",
+            width: "24px",
+            height: "2px",
+            background: "#fff",
+            borderRadius: "2px",
+            transition: "transform 0.25s, opacity 0.25s",
+            transform: menuOpen ? "translateY(7px) rotate(45deg)" : "none",
+          }}
+        />
+        <span
+          style={{
+            display: "block",
+            width: "24px",
+            height: "2px",
+            background: "#fff",
+            borderRadius: "2px",
+            transition: "opacity 0.25s",
+            opacity: menuOpen ? 0 : 1,
+          }}
+        />
+        <span
+          style={{
+            display: "block",
+            width: "24px",
+            height: "2px",
+            background: "#fff",
+            borderRadius: "2px",
+            transition: "transform 0.25s, opacity 0.25s",
+            transform: menuOpen ? "translateY(-7px) rotate(-45deg)" : "none",
+          }}
+        />
+      </button>
     </nav>
   );
 }

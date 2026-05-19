@@ -104,6 +104,12 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
+}
+
+/* Hamburger — hidden by default, shown on mobile via media query */
+.nav-hamburger {
+  display: none;
 }
 
 .logo-wordmark.white { color: #fff; }
@@ -950,18 +956,387 @@ footer {
 .hero-inner > *:nth-child(1) { animation-delay: 0.1s; }
 .hero-inner > *:nth-child(2) { animation-delay: 0.35s; }
 
-/* responsive */
-@media (max-width: 960px) {
-  .hero-inner, .tech-grid, .about-inner { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
-  .features-grid, .pest-grid { grid-template-columns: 1fr 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  nav ul { display: none; }
+/* ── RESPONSIVE / MEDIA QUERIES ── */
+
+/* ── Tablet: 768px – 1024px ── */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 5rem 5% 3rem;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+  }
+
+  .hero p {
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .tech-visual {
+    padding: 1.8rem;
+  }
+
+  .drone-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .logo-showcase {
+    align-items: center;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blog-card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .stats-strip {
+    gap: 4%;
+  }
 }
 
-@media (max-width: 600px) {
-  .features-grid, .pest-grid, .brand-values { grid-template-columns: 1fr; }
+/* ── Mobile: up to 767px ── */
+@media (max-width: 767px) {
+  /* Nav */
+  nav {
+    padding: 0 4%;
+    height: 60px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  /* Mobile nav open state */
+  nav.nav-open ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--blue);
+    padding: 1.5rem 5%;
+    gap: 1.2rem;
+    z-index: 99;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav.nav-open ul a {
+    font-size: 0.9rem;
+  }
+
+  .nav-hamburger {
+    display: flex !important;
+  }
+
+  /* Top banner */
+  .top-banner {
+    padding: 10px 4% !important;
+  }
+
+  .top-banner p {
+    font-size: 0.75rem !important;
+    letter-spacing: 2px !important;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 4rem 5% 3rem;
+    min-height: auto;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .hero-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hero p {
+    font-size: 0.88rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-green,
+  .btn-outline-white {
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 0.82rem;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
+  /* Stats strip */
+  .stats-strip {
+    padding: 1.5rem 5%;
+    gap: 1.5rem;
+    justify-content: space-around;
+  }
+
+  .stat-num {
+    font-size: 1.5rem;
+  }
+
+  .stat-lbl {
+    font-size: 0.65rem;
+  }
+
+  /* Sections */
+  .section {
+    padding: 3.5rem 5%;
+  }
+
+  .section-full {
+    padding: 3.5rem 5%;
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 5vw, 1.9rem);
+  }
+
+  .section-sub {
+    font-size: 0.85rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  /* Technology */
+  .tech-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .drone-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .drone-stat .ds-val {
+    font-size: 1.1rem;
+  }
+
+  .algo-item span {
+    font-size: 0.72rem;
+  }
+
+  .tp-item {
+    gap: 0.75rem;
+  }
+
+  .tp-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .tp-item h4 {
+    font-size: 0.88rem;
+  }
+
+  .tp-item p {
+    font-size: 0.78rem;
+  }
+
+  /* Pest section */
+  .pest-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .detect-label {
+    width: 110px;
+    font-size: 0.72rem;
+  }
+
+  .detect-pct {
+    font-size: 0.7rem;
+  }
+
+  /* Features / Solutions */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feat-card {
+    padding: 1.4rem;
+  }
+
+  /* About */
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .brand-values {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .logo-showcase {
+    align-items: center;
+  }
+
+  /* Blog */
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .blog-card:first-child {
+    grid-column: auto;
+  }
+
+  .blog-thumb {
+    height: 140px;
+  }
+
+  .blog-card:first-child .blog-thumb {
+    height: 160px;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 3.5rem 5%;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(1.4rem, 5vw, 1.9rem);
+  }
+
+  .btn-white,
+  .btn-outline-white2 {
+    padding: 12px 24px;
+    font-size: 0.82rem;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Panel metrics */
+  .panel-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Small mobile: up to 480px ── */
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 4% 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.4rem, 7vw, 1.9rem);
+  }
+
+  .stats-strip {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem 4%;
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stat-num {
+    font-size: 1.4rem;
+  }
+
+  .section {
+    padding: 2.5rem 4%;
+  }
+
+  .section-full {
+    padding: 2.5rem 4%;
+  }
+
+  .pest-detect-bar {
+    padding: 1.2rem;
+  }
+
+  .detect-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .detect-label {
+    width: 100%;
+  }
+
+  .detect-bar-track {
+    flex: 1;
+  }
+
+  .bv-card {
+    padding: 1rem;
+  }
+
+  .drone-stats {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* divider */
