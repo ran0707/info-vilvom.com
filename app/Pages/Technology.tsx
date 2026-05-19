@@ -344,7 +344,7 @@ export default function Technology() {
             {/* <img src="/icon.jpeg" alt="Sprays Icon" style={{width: '50px', height: '50px', borderRadius: '8px'}} /> */}
           </div>
           <div className="drone-feature-content">
-            <h4>Sprays 50 Acres/Day</h4>
+            <h4>Sprays 25 hectare/Day</h4>
             <p>8x Productivity</p>
           </div>
         </div>
