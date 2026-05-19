@@ -2,76 +2,369 @@
 
 export default function Technology() {
   return (
-    <section id="technology" className="section-full tech-section">
-      <div className="section" style={{ paddingTop: 0, paddingBottom: 0 }}>
-        <div className="tech-grid">
-          <div>
-            <span className="stag">Our Technology</span>
-            <h2>Flying Autonomous Drones™ Powered by AI</h2>
-            <p className="section-sub">Vilvom's drone fleet is guided by cutting-edge algorithms that enable extraordinary accuracy across tea plantation canopies continuously collecting real-time data on plant health, pest presence, and soil conditions with every flight.</p>
-            <div className="tech-points">
-              <div className="tp-item">
-                <div className="tp-icon tp-icon-g">🌿</div>
-                <div>
-                  <h4>Tea-Specific Spray Formulation Protocols</h4>
-                  <p>Exclusive spraying formulations and dosage standards are developed specifically for tea plantations, ensuring effective pest control while reducing phytotoxicity risks and excessive chemical concentration on tea leaves.</p>
-                </div>
-              </div>
-              <div className="tp-item">
-                <div className="tp-icon tp-icon-b">🧪</div>
-                <div>
-                  <h4>MRL-Compliant Precision Spraying</h4>
-                  <p>Drone spraying operations are designed to support compliance with FSSAI, Codex Alimentarius, and EU MRL standards through controlled ultra-low-volume application, geo-tagged spray records, and scientifically monitored residue analysis.</p>
-                </div>
-              </div>
-              <div className="tp-item">
-                <div className="tp-icon tp-icon-g">🎯</div>
-                <div>
-                  <h4>Spray Uniformity & Canopy Penetration</h4>
-                  <p>Advanced drone spraying protocols ensure optimized droplet deposition across dense tea canopies. Parameters such as flight height, rotor airflow, nozzle configuration, and droplet size are calibrated to improve spray uniformity and minimize drift loss.</p>
-                </div>
-              </div>
-              <div className="tp-item">
-                <div className="tp-icon tp-icon-b">�</div>
-                <div>
-                  <h4>Geo-Tagged Targeted Application</h4>
-                  <p>GPS-guided drone operations enable precise zonal spraying instead of blanket chemical application, reducing pesticide wastage and ensuring better coverage of affected plantation blocks.</p>
-                </div>
-              </div>
-              <div className="tp-item">
-                <div className="tp-icon tp-icon-g">⚡</div>
-                <div>
-                  <h4>High-Efficiency Ultra-Low-Volume Spraying</h4>
-                  <p>Drone-based spraying achieves 5–10× faster field coverage with 60–80% lower water and pesticide usage compared to conventional manual spraying methods.</p>
-                </div>
-              </div>
-              <div className="tp-item">
-                <div className="tp-icon tp-icon-b">🤝</div>
-                <div>
-                  <h4>Estate-Focused Operational Framework</h4>
-                  <p>A structured collaboration model supports tea estates through DGCA-certified drone operators, scientific validation workflows, estate-level dashboards, and year-round spraying engagement.</p>
-                </div>
-              </div>
-            </div>
+    <>
+      <style>{`
+        /* What is Vilvom Section */
+        .what-is-vilvom-section {
+          background: #fff;
+          padding: 4rem 5%;
+        }
+
+        .what-is-vilvom-container {
+          max-width: 1280px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .vilvom-circles {
+          display: none;
+        }
+
+        .vilvom-content {
+          text-align: center;
+          max-width: 800px;
+        }
+
+        .vilvom-content h2 {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: #1a2a10;
+          margin-bottom: 1.5rem;
+          line-height: 1.2;
+        }
+
+        .vilvom-content p {
+          font-size: 1rem;
+          color: #3d5232;
+          line-height: 1.8;
+          margin: 0;
+        }
+
+        /* Drone Spraying Section */
+        .drone-spraying-section {
+          background-image: url('/drone.png');
+          background-size: cover;
+          background-position: center top;
+          background-repeat: no-repeat;
+          min-height: 600px;
+          position: relative;
+          padding: 4rem 5%;
+        }
+
+        .drone-spraying-section::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(255, 255, 255, 0.05);
+          z-index: 0;
+        }
+
+        .drone-spraying-overlay {
+          position: relative;
+          z-index: 1;
+        }
+
+        .drone-spraying-container {
+          max-width: 1280px;
+          margin: 0 auto;
+        }
+
+        .drone-spraying-title {
+          font-size: 3rem;
+          font-weight: 800;
+          color: #6DC132;
+          margin-bottom: 0.5rem;
+          line-height: 1.2;
+        }
+
+        .drone-spraying-subtitle {
+          color: #6DC132;
+          font-size: 2rem;
+          font-weight: 600;
+        }
+
+        .drone-stats-card {
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 20px;
+          padding: 1.5rem 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          gap: 1.5rem;
+          margin: 2rem 0;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+          max-width: 600px;
+        }
+
+        .drone-stat-item {
+          text-align: center;
+          flex: 1;
+        }
+
+        .drone-stat-item h3 {
+          font-size: 2.2rem;
+          font-weight: 800;
+          color: #1a2a10;
+          margin-bottom: 0.3rem;
+          line-height: 1;
+        }
+
+        .drone-stat-item p {
+          font-size: 0.85rem;
+          color: #3d5232;
+          font-weight: 600;
+          margin: 0;
+        }
+
+        .drone-stat-divider {
+          width: 2px;
+          height: 50px;
+          background: #6DC132;
+        }
+
+        .drone-tech-feature {
+          background: rgba(255, 255, 255, 0.95);
+          border-radius: 16px;
+          padding: 1rem 1.5rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          max-width: 600px;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-feature-icon {
+          flex-shrink: 0;
+        }
+
+        .drone-tech-feature p {
+          font-size: 0.85rem;
+          color: #1a2a10;
+          font-weight: 600;
+          margin: 0;
+          line-height: 1.5;
+        }
+
+        /* Bottom Features Section */
+        .drone-bottom-features {
+          background: #2c3d99;
+          padding: 2.5rem 5%;
+          display: flex;
+          justify-content: center;
+          gap: 4rem;
+          flex-wrap: wrap;
+        }
+
+        .drone-feature-item {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+        }
+
+        .drone-feature-icon {
+          font-size: 3rem;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .drone-feature-content h4 {
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: #fff;
+          margin: 0 0 0.25rem 0;
+        }
+
+        .drone-feature-content p {
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.7);
+          margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+          .vilvom-content h2 {
+            font-size: 2rem;
+          }
+
+          .drone-spraying-title {
+            font-size: 2rem;
+          }
+
+          .drone-spraying-subtitle {
+            font-size: 1.5rem;
+          }
+
+          .drone-stats-card {
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1.5rem;
+          }
+
+          .drone-stat-divider {
+            width: 60px;
+            height: 2px;
+          }
+
+          .drone-bottom-features {
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .what-is-vilvom-section {
+            padding: 3rem 4%;
+          }
+
+          .vilvom-content h2 {
+            font-size: 1.75rem;
+          }
+
+          .vilvom-content p {
+            font-size: 0.9rem;
+          }
+
+          .drone-spraying-section {
+            padding: 3rem 4%;
+            min-height: 500px;
+          }
+
+          .drone-spraying-title {
+            font-size: 1.5rem;
+          }
+
+          .drone-spraying-subtitle {
+            font-size: 1.2rem;
+          }
+
+          .drone-stats-card {
+            padding: 1.5rem;
+          }
+
+          .drone-stat-item h3 {
+            font-size: 2rem;
+          }
+
+          .drone-stat-item p {
+            font-size: 0.9rem;
+          }
+
+          .drone-tech-feature {
+            padding: 1.25rem 1.5rem;
+          }
+
+          .drone-tech-feature p {
+            font-size: 0.85rem;
+          }
+
+          .drone-feature-icon {
+            font-size: 2rem;
+            width: 50px;
+            height: 50px;
+          }
+
+          .drone-feature-content h4 {
+            font-size: 1rem;
+          }
+
+          .drone-feature-content p {
+            font-size: 0.85rem;
+          }
+        }
+      `}</style>
+
+      {/* What is Vilvom Section */}
+      <section className="what-is-vilvom-section">
+        <div className="what-is-vilvom-container">
+          <div className="vilvom-content">
+            <h2>What is Vilvom?</h2>
+            <p>
+              Vilvom is a comprehensive platform for drone spraying in Indian tea plantations, making
+              advanced technology accessible to farmers. It empowers tea estates as drone operators,
+              ensuring efficient, cost-effective, and sustainable farming solutions.
+            </p>
           </div>
-          <div className="tech-visual">
-            <div className="drone-stats">
-              <div className="drone-stat"><span className="ds-val">Active Drones</span><span className="ds-lbl">Drones maneuvered by DGCA-certified pilots.</span></div>
-              <div className="drone-stat"><span className="ds-val">98%</span><span className="ds-lbl">Flight Accuracy</span></div>
-              <div className="drone-stat"><span className="ds-val">4K+</span><span className="ds-lbl">Acres / Day</span></div>
-              <div className="drone-stat"><span className="ds-val">2</span><span className="ds-lbl">Global Patents</span></div>
+        </div>
+      </section>
+
+      {/* Drone Spraying Section */}
+      <section className="drone-spraying-section">
+        <div className="drone-spraying-overlay">
+          <div className="drone-spraying-container">
+            <h2 className="drone-spraying-title">
+              Drone Spraying:<br />
+              <span className="drone-spraying-subtitle">A Modern Solution for Tea Estates</span>
+            </h2>
+
+            {/* Stats Card */}
+            <div className="drone-stats-card">
+              <div className="drone-stat-item">
+                <h3>80%</h3>
+                <p>Water Saving</p>
+              </div>
+              <div className="drone-stat-divider"></div>
+              <div className="drone-stat-item">
+                <h3>60%</h3>
+                <p>Input Saving</p>
+              </div>
+              <div className="drone-stat-divider"></div>
+              <div className="drone-stat-item">
+                <h3>40%</h3>
+                <p>Cost Saving</p>
+              </div>
             </div>
-            <div className="algo-list">
-              <div className="algo-item"><div className="algo-dot"></div><span>Tea-Specific Spray Formulation Protocols : Precise droplet distribution across tea canopies</span></div>
-              <div className="algo-item"><div className="algo-dot"></div><span>MRL Compliance Tracking : Real-time residue monitoring & regulatory adherence</span></div>
-              <div className="algo-item"><div className="algo-dot"></div><span>Canopy Penetration Analysis : Optimal flight height & nozzle configuration</span></div>
-              <div className="algo-item"><div className="algo-dot"></div><span>Geo-Tagged Application : GPS-guided zonal spraying with drift minimization</span></div>
-              <div className="algo-item"><div className="algo-dot"></div><span>Ultra-Low-Volume Calibration : Efficient chemical usage with maximum coverage</span></div>
-              <div className="algo-item"><div className="algo-dot"></div><span>Estate Management Integration : DGCA-certified operations & dashboard analytics</span></div>
+
+            {/* Technology Feature */}
+            <div className="drone-tech-feature">
+              <div className="tech-feature-icon">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                  <circle cx="20" cy="20" r="18" fill="#6DC132" opacity="0.2"/>
+                  <circle cx="20" cy="20" r="12" fill="#6DC132" opacity="0.4"/>
+                  <circle cx="20" cy="20" r="6" fill="#6DC132"/>
+                </svg>
+              </div>
+              <p>Advanced sensors and GPS technology ensures Precise targeting & Equidistribution</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Bottom Features Section */}
+      <section className="drone-bottom-features">
+        <div className="drone-feature-item">
+          <div className="drone-feature-icon">
+            {/* <img src="/icon.jpeg" alt="Sprays Icon" style={{width: '50px', height: '50px', borderRadius: '8px'}} /> */}
+          </div>
+          <div className="drone-feature-content">
+            <h4>Sprays 50 Acres/Day</h4>
+            <p>8x Productivity</p>
+          </div>
+        </div>
+        <div className="drone-feature-item">
+          <div className="drone-feature-icon">⚡</div>
+          <div className="drone-feature-content">
+            <h4>5 Mins</h4>
+            <p>For an acre only</p>
+          </div>
+        </div>
+        <div className="drone-feature-item">
+          <div className="drone-feature-icon">🛡️</div>
+          <div className="drone-feature-content">
+            <h4>No Human Exposure</h4>
+            <p>Safest Spraying Mechanism</p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

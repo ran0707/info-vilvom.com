@@ -5,6 +5,7 @@ import TopBanner from "../components/TopBanner";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Technology from "./Technology";
+import DroneSpraying from "./DroneSpraying";
 import PestDisease from "./PestDisease";
 import Solutions from "./Solutions";
 import AboutVilvom from "./AboutVilvom";
@@ -39,37 +40,32 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section className="hero">
-        <svg className="hero-bg-rings" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="300" cy="300" r="280" stroke="white" strokeWidth="1.5" />
-          <circle cx="300" cy="300" r="220" stroke="white" strokeWidth="1.5" />
-          <circle cx="300" cy="300" r="160" stroke="white" strokeWidth="1.5" />
-          <circle cx="300" cy="300" r="100" stroke="white" strokeWidth="1.5" />
-          <circle cx="300" cy="300" r="40" stroke="white" strokeWidth="1.5" />
-        </svg>
+        {/* Background Video */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="hero-bg-video"
+        >
+          <source src="/bg-video.mp4" type="video/mp4" />
+        </video>
+        
         <div className="hero-inner">
-          <div>
-            <div className="hero-tag"><span></span> Precision Agriculture · Coimbatore, India</div>
-            <p className="hero-tagline">Pure Care for Every Plantation</p>
-            <h1>Smart Tech for <span className="accent">Thriving</span> Tea Plantations</h1>
-            <p>Vilvom nurtures and protects tea plantations through innovative, nature-driven care solutions combining AI, IoT sensors, drone technology, and satellite imagery to deliver reliability, growth, and prosperity for tea farmers.</p>
-            <div className="hero-actions">
-              <a href="#technology" className="btn-green">Explore Technology</a>
-              <a href="#contact" className="btn-outline-white">Get in Touch</a>
-            </div>
-          </div>
-          <div className="hero-visual">
-            <div className="hero-panel">
-              <div className="panel-header">
-                <span className="panel-title">Integrated Smart Tea Plantation Ecosystem</span>
-                {/* <div className="live-pill"><span className="live-dot"></span> Live</div> */}
-              </div>
-              <div className="panel-metrics">
-                <div className="pm g"><span className="lbl">Intelligent Pest Detection & Monitoring</span></div>
-                <div className="pm gb"><span className="lbl">Precision Spraying & Treatment Recommendation</span></div>
-                <div className="pm gb"><span className="lbl">MRL-Compliant Sustainable Operations</span></div>
-                <div className="pm g"><span className="lbl">GPS-Guided Smart Field Management</span></div>              
-              </div>
-             
+          <div className="hero-center-content">
+            <h1 className="hero-center-heading">
+              Delivering effective crop spraying by <span className="accent">precision farming drones</span>
+            </h1>
+<p className="hero-center-subtitle" style={{ transform: "translateX(190px)", color: "#ffffff", fontSize: "1.55rem", whiteSpace: "nowrap" }}>
+  Increase Your Yield with Our Spraying Service
+</p>
+            <div className="app-store-buttons">
+              <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="store-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" />
+              </a>
+              <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" className="store-button">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Download on the App Store" />
+              </a>
             </div>
           </div>
         </div>
@@ -86,6 +82,9 @@ export default function Home() {
 
       {/* TECHNOLOGY SECTION */}
       <Technology />
+
+      {/* DRONE SPRAYING SECTION */}
+      <DroneSpraying />
 
       {/* PEST & DISEASE DETECTION SECTION */}
       <PestDisease />

@@ -95,7 +95,7 @@ body {
 
 /* ── NAV ── */
 nav {
-  background: var(--blue);
+  background: #ffffff;
   padding: 0 5%;
   display: flex;
   align-items: center;
@@ -122,7 +122,7 @@ nav ul {
 }
 
 nav ul a {
-  color: rgba(255,255,255,0.82);
+  color: #1a5a4a;
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 600;
@@ -151,6 +151,16 @@ nav ul a:hover { color: var(--green); }
   padding: 6rem 5% 4rem;
 }
 
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
 .hero-bg-rings {
   position: absolute;
   right: -8%;
@@ -159,18 +169,77 @@ nav ul a:hover { color: var(--green); }
   height: 130%;
   pointer-events: none;
   opacity: 0.12;
+  z-index: 1;
 }
 
 .hero-inner {
   max-width: 1280px;
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  min-height: 70vh;
+  padding-top: 3rem;
+}
+
+.hero-center-content {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+
+.hero-center-heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin: 0 0 1.5rem 0;
+}
+
+.hero-center-heading .accent {
+  color: var(--green);
+}
+
+.hero-center-subtitle {
+  font-size: clamp(8.5rem, 7vw, 7rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.4;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  opacity: 0.95;
+  text-align: center;
+  letter-spacing: 0.15em;
+}
+
+.app-store-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.store-button {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.store-button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.store-button img {
+  height: 50px;
+  width: auto;
+  display: block;
 }
 
 .hero-tag {
@@ -453,6 +522,268 @@ h2 {
 
 /* ── TECHNOLOGY (Tevel-inspired) ── */
 .tech-section { background: var(--off); }
+
+/* === NEW TECHNOLOGY DESIGN === */
+/* What is Vilvom Section */
+.what-is-vilvom-section {
+  background: #fff;
+  padding: 4rem 5%;
+}
+
+.what-is-vilvom-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.vilvom-circles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+}
+
+.vilvom-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #e0e0e0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.vilvom-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vilvom-circle-center {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.vilvom-center-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+}
+
+.vilvom-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.vilvom-content p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+}
+
+/* Drone Spraying Section */
+.drone-spraying-section {
+  background-image: url('/coffe.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+  position: relative;
+  padding: 4rem 5%;
+}
+
+.drone-spraying-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.drone-spraying-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.drone-spraying-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.drone-spraying-subtitle {
+  color: var(--green);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.drone-stats-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  margin: 3rem 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  max-width: 800px;
+}
+
+.drone-stat-item {
+  text-align: center;
+  flex: 1;
+}
+
+.drone-stat-item h3 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.drone-stat-item p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  font-weight: 600;
+  margin: 0;
+}
+
+.drone-stat-divider {
+  width: 2px;
+  height: 60px;
+  background: var(--green);
+}
+
+.drone-tech-feature {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tech-feature-icon {
+  flex-shrink: 0;
+}
+
+.drone-tech-feature p {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Bottom Features Section */
+.drone-bottom-features {
+  background: var(--blue-dark);
+  padding: 2.5rem 5%;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.drone-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.drone-feature-icon {
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.drone-feature-content h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.25rem 0;
+}
+
+.drone-feature-content p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .what-is-vilvom-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .vilvom-circles {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .vilvom-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .vilvom-circle-center {
+    width: 120px;
+    height: 120px;
+  }
+
+  .vilvom-content h2 {
+    font-size: 2rem;
+  }
+
+  .drone-spraying-title {
+    font-size: 2rem;
+  }
+
+  .drone-spraying-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .drone-stats-card {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .drone-stat-divider {
+    width: 60px;
+    height: 2px;
+  }
+
+  .drone-bottom-features {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+}
+
+/* OLD TECHNOLOGY STYLES (keeping for reference) */
 
 .tech-grid {
   display: grid;

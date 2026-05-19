@@ -1,301 +1,335 @@
 "use client";
 import Link from "next/link";
 
-const portals = [
-  {
-    href: "/home",
-    label: "Vilvom Agri Solutions",
-    subtitle: "Precision Agriculture & Tea Plantation Management",
-    description:
-      "Explore AI-powered pest detection, drone technology, IoT sensors, and satellite imagery solutions built for thriving tea plantations across South India.",
-    icon: "🌿",
-    accent: "#1a6b3a",
-    border: "rgba(255,255,255,0.25)",
-  },
-  {
-    href: "/vilvom",
-    label: "Vilvom Distributor Pvt Ltd",
-    subtitle: "FMCG Distribution & Supply Chain",
-    description:
-      "Access South India's leading FMCG distribution network — connecting brands to retailers across Tamil Nadu, Kerala, Karnataka, Andhra Pradesh, and Telangana.",
-    icon: "🏪",
-    accent: "#1a3a6b",
-    border: "rgba(255,255,255,0.25)",
-  },
-];
-
 export default function LandingPage() {
   return (
     <>
       <style>{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
         .landing-root {
           min-height: 100vh;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          background: #2c3d99;
-          background-image:
-            radial-gradient(ellipse at 20% 50%, rgba(59,79,184,0.6) 0%, transparent 60%),
-            radial-gradient(ellipse at 80% 20%, rgba(44,61,153,0.8) 0%, transparent 55%),
-            radial-gradient(ellipse at 60% 90%, rgba(20,30,90,0.7) 0%, transparent 50%);
-          font-family: var(--font-geist-sans, sans-serif);
-          padding: 2rem 1rem;
+          background: linear-gradient(135deg, #3B4FB8 0%, #3B4FB8 50%, #52A020 50%, #52A020 100%);
+          font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          padding: 2rem;
+          position: relative;
+          overflow: hidden;
         }
 
-        .landing-brand {
+        .landing-root::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: 
+            linear-gradient(135deg, 
+              #3B4FB8 0%, 
+              #3B4FB8 49.5%, 
+              #52A020 50.5%, 
+              #52A020 100%
+            );
+          z-index: 0;
+        }
+
+        .landing-container {
+          background: rgba(255, 255, 255, 0.98);
+          border-radius: 32px;
+          padding: 5%;
+          max-width: 90%;
+          width: 90%;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+          position: relative;
+          z-index: 1;
+        }
+
+        .landing-header {
           text-align: center;
-          margin-bottom: 3.5rem;
+          margin-bottom: 3rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .landing-logo {
-          width: 430px;
-          height: 120px;
-          object-fit: cover;
-          border: 3px solid rgba(255,255,255,0.25);
-          border-radius: 8px;
-          margin-bottom: 1.25rem;
-          box-shadow: 0 4px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(109,193,50,0.2);
-        }
-
-        .landing-title {
-          color: #fff;
-          font-size: 2.6rem;
-          font-weight: 800;
-          letter-spacing: 0.06em;
-          margin: 0 0 0.4rem 0;
-          text-transform: uppercase;
-        }
-
-        .landing-subtitle {
-          color: rgba(255,255,255,0.5);
-          font-size: 0.9rem;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          margin: 0;
+          max-width: 420px;
+          width: 100%;
+          height: auto;
+          margin: 0 auto;
+          display: block;
         }
 
         .landing-cards {
-          display: flex;
-          gap: 1.75rem;
-          flex-wrap: wrap;
-          justify-content: center;
-          width: 100%;
-          max-width: 860px;
-        }
-
-        .landing-card-link {
-          text-decoration: none;
-          flex: 1 1 340px;
-          max-width: 400px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          margin-bottom: 2rem;
         }
 
         .landing-card {
-          background: rgba(255,255,255,0.07);
-          border: 1px solid rgba(255,255,255,0.18);
-          border-radius: 16px;
-          padding: 2rem 1.75rem;
-          cursor: pointer;
-          transition: transform 0.2s, background 0.2s, box-shadow 0.2s, border-color 0.2s;
-          backdrop-filter: blur(12px);
-          height: 100%;
-          box-sizing: border-box;
+          background: #fff;
+          border: 3px solid #d0d0d0;
+          border-radius: 24px;
+          overflow: hidden;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+          height: 280px;
         }
 
         .landing-card:hover {
           transform: translateY(-4px);
-          background: rgba(255,255,255,0.13);
-          border-color: rgba(109,193,50,0.45);
-          box-shadow: 0 16px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(109,193,50,0.2);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+          border-color: #6DC132;
         }
 
-        .landing-card-icon {
-          font-size: 2.2rem;
-          margin-bottom: 1rem;
-          width: 52px;
-          height: 52px;
-          background: rgba(255,255,255,0.1);
-          border-radius: 12px;
+        .card-left {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .card-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .card-right {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 2.5rem 2rem;
+          text-align: center;
+        }
+
+        .card-right-green {
+          background: #6DC132;
+        }
+
+        .card-right-blue {
+          background: #3B4FB8;
+        }
+
+        .card-title {
+          color: #fff;
+          font-size: 1.75rem;
+          font-weight: 800;
+          margin-bottom: 0.5rem;
+          line-height: 1.2;
+          letter-spacing: 0.5px;
+        }
+
+        .card-subtitle {
+          color: rgba(255, 255, 255, 0.95);
+          font-size: 1rem;
+          font-weight: 600;
+          margin-bottom: 2rem;
+          line-height: 1.4;
+        }
+
+        .card-button {
+          background: #fff;
+          color: #333;
+          padding: 0.75rem 1.75rem;
+          border-radius: 50px;
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.8px;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          transition: all 0.2s ease;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-button:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-button-icon {
+          width: 24px;
+          height: 24px;
+          background: #333;
+          border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-        }
-
-        .landing-card-label {
-          color: #fff;
-          font-size: 1.15rem;
-          font-weight: 700;
-          margin: 0 0 0.3rem 0;
-          line-height: 1.3;
-        }
-
-        .landing-card-sub {
-          color: rgba(255,255,255,0.5);
-          font-size: 0.75rem;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          margin: 0 0 1rem 0;
-        }
-
-        .landing-card-divider {
-          height: 1px;
-          background: rgba(255,255,255,0.1);
-          margin-bottom: 1rem;
-        }
-
-        .landing-card-desc {
-          color: rgba(255,255,255,0.7);
-          font-size: 0.85rem;
-          line-height: 1.7;
-          margin: 0 0 1.5rem 0;
-        }
-
-        .landing-card-cta {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.4rem;
           color: #fff;
           font-size: 0.85rem;
-          font-weight: 600;
-          opacity: 0.85;
+          font-weight: bold;
         }
 
         .landing-footer {
-          color: rgba(255,255,255,0.25);
+          text-align: center;
+          color: #666;
           font-size: 0.75rem;
-          margin-top: 3rem;
-          letter-spacing: 0.05em;
+          margin-top: 1.5rem;
+          padding-top: 1.5rem;
+          border-top: 1px solid #e0e0e0;
         }
 
         /* Tablet */
         @media (max-width: 768px) {
-          .landing-logo {
-            width: 300px;
-            height: 90px;
-          }
-
-          .landing-title {
-            font-size: 2rem;
-          }
-
-          .landing-brand {
-            margin-bottom: 2.5rem;
+          .landing-container {
+            padding: 2.5rem;
+            width: 95%;
+            max-width: 95%;
           }
 
           .landing-cards {
-            gap: 1.25rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
           }
 
-          .landing-card-link {
-            flex: 1 1 280px;
+          .landing-card {
+            grid-template-columns: 1fr;
+            height: auto;
+          }
+
+          .card-left {
+            height: 200px;
+          }
+
+          .card-right {
+            padding: 2rem;
+          }
+
+          .card-title {
+            font-size: 1.4rem;
+          }
+
+          .card-subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
           }
         }
 
         /* Mobile */
         @media (max-width: 480px) {
           .landing-root {
-            padding: 1.5rem 1rem;
-            justify-content: flex-start;
-            padding-top: 2.5rem;
+            padding: 1rem;
+          }
+
+          .landing-container {
+            padding: 2rem;
+            border-radius: 24px;
+            width: 95%;
+            max-width: 95%;
           }
 
           .landing-logo {
-            width: 240px;
-            height: 70px;
+            max-width: 280px;
           }
 
-          .landing-title {
-            font-size: 1.6rem;
-          }
-
-          .landing-subtitle {
-            font-size: 0.75rem;
-            letter-spacing: 0.08em;
-          }
-
-          .landing-brand {
+          .landing-header {
             margin-bottom: 2rem;
           }
 
-          .landing-cards {
-            flex-direction: column;
-            gap: 1rem;
-          }
-
-          .landing-card-link {
-            flex: none;
-            max-width: 100%;
-            width: 100%;
-          }
-
           .landing-card {
-            padding: 1.5rem 1.25rem;
+            grid-template-columns: 1fr;
+            height: auto;
           }
 
-          .landing-card-label {
-            font-size: 1rem;
+          .card-left {
+            height: 180px;
           }
 
-          .landing-card-desc {
-            font-size: 0.82rem;
+          .card-right {
+            padding: 1.75rem 1.5rem;
           }
 
-          .landing-footer {
-            margin-top: 2rem;
-            text-align: center;
+          .card-title {
+            font-size: 1.2rem;
+          }
+
+          .card-subtitle {
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
+          }
+
+          .card-button {
+            padding: 0.65rem 1.5rem;
+            font-size: 0.75rem;
+          }
+
+          .card-button-icon {
+            width: 20px;
+            height: 20px;
           }
         }
       `}</style>
 
       <main className="landing-root">
-        {/* Brand header */}
-        <div className="landing-brand">
-          <img
-            src="/vilvom.jpeg"
-            alt="Vilvom Logo"
-            className="landing-logo"
-          />
-          <h1 className="landing-title">Vilvom</h1>
-          <p className="landing-subtitle">Choose your portal</p>
-        </div>
+        <div className="landing-container">
+          {/* Header with Logo */}
+          <div className="landing-header">
+            <img
+              src="/vilvom.jpeg"
+              alt="Vilvom - Rooted in Nature, Grown for Life"
+              className="landing-logo"
+            />
+          </div>
 
-        {/* Portal cards */}
-        <div className="landing-cards">
-          {portals.map((portal) => (
-            <Link
-              key={portal.href}
-              href={portal.href}
-              className="landing-card-link"
-            >
-              <div className="landing-card">
-                {/* Icon */}
-                <div className="landing-card-icon">{portal.icon}</div>
-
-                {/* Label */}
-                <h2 className="landing-card-label">{portal.label}</h2>
-
-                {/* Subtitle */}
-                <p className="landing-card-sub">{portal.subtitle}</p>
-
-                {/* Divider */}
-                <div className="landing-card-divider" />
-
-                {/* Description */}
-                <p className="landing-card-desc">{portal.description}</p>
-
-                {/* CTA */}
-                <div className="landing-card-cta">
-                  Enter Portal <span style={{ fontSize: "1rem" }}>→</span>
+          {/* Portal Cards */}
+          <div className="landing-cards">
+            {/* Precision Agriculture Card */}
+            <Link href="/home" className="landing-card">
+              <div className="card-left">
+                <img
+                  src="/drone.png"
+                  alt="Precision Agriculture"
+                  className="card-image"
+                />
+              </div>
+              <div className="card-right card-right-green">
+                <h2 className="card-title">Vilvom LLP</h2>
+                <p className="card-subtitle">Precision Agriculture</p>
+                <div className="card-button">
+                  <span>ENTER PORTAL</span>
+                  <div className="card-button-icon">→</div>
                 </div>
               </div>
             </Link>
-          ))}
-        </div>
 
-        {/* Footer note */}
-        <p className="landing-footer">
-          © {new Date().getFullYear()} Vilvom Group. All rights reserved.
-        </p>
+            {/* Sales & Distribution Card */}
+            <Link href="/vilvom" className="landing-card">
+              <div className="card-left">
+                <img
+                  src="/FMCG.png"
+                  alt="Sales & Distribution"
+                  className="card-image"
+                />
+              </div>
+              <div className="card-right card-right-blue">
+                <h2 className="card-title">Vilvom LLP</h2>
+                <p className="card-subtitle">Sales & Distribution</p>
+                <div className="card-button">
+                  <span>ENTER PORTAL</span>
+                  <div className="card-button-icon">→</div>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* Footer */}
+          <div className="landing-footer">
+            © {new Date().getFullYear()} Vilvom Group. All rights reserved.
+          </div>
+        </div>
       </main>
     </>
   );
