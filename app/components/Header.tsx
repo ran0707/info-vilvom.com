@@ -33,24 +33,19 @@ export default function Header() {
       {/* Navigation Menu */}
       <ul>
         <li>
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
         </li>
         <li>
-          <a href="#technology" onClick={() => setMenuOpen(false)}>Technology</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About Us</a>
         </li>
         <li>
-          <a href="#pest" onClick={() => setMenuOpen(false)}>Pest Infestation</a>
+          <a href="#pest" onClick={() => setMenuOpen(false)}>Vilvom Drones</a>
         </li>
         <li>
-          <a href="#solutions" onClick={() => setMenuOpen(false)}>Solutions</a>
+          <a href="#pest" onClick={() => setMenuOpen(false)}>Vilvom App</a>
         </li>
         <li>
-          <a href="#blog" onClick={() => setMenuOpen(false)}>Insights</a>
-        </li>
-        <li>
-          <a href="#contact" className="nav-cta" onClick={() => setMenuOpen(false)}>
-            Contact Us
-          </a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact Us</a>
         </li>
       </ul>
 

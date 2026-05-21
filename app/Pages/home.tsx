@@ -4,12 +4,10 @@ import { useEffect } from "react";
 import TopBanner from "../components/TopBanner";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Technology from "./Technology";
+import Technology from "./DiscoverVilvom";
 import DroneSpraying from "./DroneSpraying";
 import PestDisease from "./PestDisease";
 import Solutions from "./Solutions";
-import AboutVilvom from "./AboutVilvom";
-import Insights from "./Insights";
 import ContactUs from "./ContactUs";
 
 export default function Home() {
@@ -39,7 +37,7 @@ export default function Home() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="hero">
+      <section id="home" className="hero">
         {/* Background Video */}
         <video 
           autoPlay 
@@ -72,13 +70,13 @@ export default function Home() {
       </section>
 
       {/* STATS STRIP */}
-      <div className="stats-strip">
+      {/* <div className="stats-strip">
         <div className="stat-item"><span className="stat-num">12,000+</span><span className="stat-lbl">Acres Managed</span></div>
         <div className="stat-item"><span className="stat-num">98%</span><span className="stat-lbl">Pest Detection Accuracy</span></div>
         <div className="stat-item"><span className="stat-num">40%</span><span className="stat-lbl">Pesticide Reduction</span></div>
         <div className="stat-item"><span className="stat-num">22%</span><span className="stat-lbl">Yield Increase</span></div>
         <div className="stat-item"><span className="stat-num">11</span><span className="stat-lbl">Patents Granted</span></div>
-      </div>
+      </div> */}
 
       {/* TECHNOLOGY SECTION */}
       <Technology />
@@ -93,12 +91,6 @@ export default function Home() {
       <Solutions />
 
       <div className="section-divider"></div>
-
-      {/* ABOUT / BRAND SECTION */}
-      <AboutVilvom />
-
-      {/* BLOG SECTION */}
-      <Insights />
 
       {/* CTA SECTION */}
       <ContactUs />

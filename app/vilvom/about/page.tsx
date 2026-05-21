@@ -1,5 +1,13 @@
-import AboutUs from "../../Pages/vilvom/aboutus";
+import DiscoverVilvom from "../../Pages/DiscoverVilvom";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function Page() {
-  return <AboutUs />;
+  return (
+    <>
+      <Header />
+      <DiscoverVilvom />
+      <Footer />
+    </>
+  );
 }

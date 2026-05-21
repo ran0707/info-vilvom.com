@@ -5,217 +5,274 @@ export default function DroneSpraying() {
     <>
       <style>{`
         .drone-spraying-page {
-          background: #f5f8f0;
-          padding: 4rem 5%;
+          background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+          padding: 5rem 5%;
         }
 
-        /* How It Works Section */
-        .how-it-works-section {
-          max-width: 1280px;
-          margin: 0 auto 4rem;
+        /* Why Choose Section - Card Style */
+        .why-choose-section {
+          max-width: 1400px;
+          margin: 0 auto 6rem;
         }
 
-        .how-it-works-title {
+        .why-choose-header {
           text-align: center;
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: #1a5a4a;
-          margin-bottom: 3rem;
+          margin-bottom: 4rem;
         }
 
-        .how-it-works-steps {
+        .section-badge {
+          display: inline-block;
+          background: linear-gradient(135deg, #3B4FB8 0%, #52A020 100%);
+          color: white;
+          padding: 0.5rem 1.5rem;
+          border-radius: 50px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          margin-bottom: 1.5rem;
+        }
+
+        .why-choose-title {
+          font-size: 3rem;
+          font-weight: 900;
+          background: linear-gradient(135deg, #3B4FB8 0%, #52A020 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin-bottom: 1rem;
+        }
+
+        .why-choose-subtitle {
+          font-size: 1.2rem;
+          color: #666;
+          max-width: 700px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .why-choose-cards {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
+          gap: 2.5rem;
         }
 
-        .step-card {
-          background: #fff;
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .step-card:hover {
-          transform: translateY(-8px);
-        }
-
-        .step-image-container {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 2rem 1rem;
-          background: #f5f8f0;
-          flex: 1;
-        }
-
-        .step-image-frame {
+        .feature-card-modern {
+          background: white;
+          border-radius: 24px;
+          padding: 3rem 2rem;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
-          width: 220px;
-          border: 8px solid #1a1a1a;
-          border-radius: 30px;
           overflow: hidden;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+          border: 2px solid transparent;
         }
 
-        .step-image-frame::before {
+        .feature-card-modern::before {
           content: '';
           position: absolute;
-          top: 10px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 60px;
-          height: 6px;
-          background: #333;
-          border-radius: 3px;
-          z-index: 1;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 5px;
+          background: linear-gradient(90deg, #3B4FB8 0%, #52A020 100%);
+          transform: scaleX(0);
+          transition: transform 0.4s ease;
         }
 
-        .step-image {
-          width: 100%;
-          height: 350px;
-          object-fit: cover;
-          display: block;
+        .feature-card-modern:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 60px rgba(59, 79, 184, 0.15);
+          border-color: #3B4FB8;
         }
 
-        .step-content {
-          padding: 1.5rem;
+        .feature-card-modern:hover::before {
+          transform: scaleX(1);
         }
 
-        .step-title {
-          font-size: 1.2rem;
-          font-weight: 700;
-          color: #1a5a4a;
+        .feature-icon-modern {
+          width: 80px;
+          height: 80px;
+          background: linear-gradient(135deg, #3B4FB8 0%, #52A020 100%);
+          border-radius: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+          box-shadow: 0 8px 20px rgba(59, 79, 184, 0.2);
+        }
+
+        .feature-card-modern h4 {
+          font-size: 1.5rem;
+          font-weight: 800;
+          color: #1a1a1a;
           margin-bottom: 0.75rem;
         }
 
-        .step-description {
-          font-size: 0.9rem;
-          color: #3d5232;
+        .feature-card-modern p {
+          font-size: 1rem;
+          color: #666;
           line-height: 1.6;
           margin: 0;
         }
 
-        /* Why Choose Section */
-        .why-choose-section {
-          max-width: 1280px;
-          margin: 0 auto 4rem;
+        /* Types of Crops Section - Modern Grid */
+        .types-of-crops-section {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 4rem 0;
         }
 
-        .why-choose-title {
+        .crops-header {
           text-align: center;
-          font-size: 2.5rem;
+          margin-bottom: 4rem;
+        }
+
+        .crops-title {
+          font-size: 3rem;
+          font-weight: 900;
+          color: #1a1a1a;
+          margin-bottom: 1rem;
+        }
+
+        .crops-subtitle {
+          font-size: 1.2rem;
+          color: #666;
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .crops-grid-modern {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 2rem;
+        }
+
+        .crop-card-modern {
+          position: relative;
+          height: 280px;
+          border-radius: 20px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+          display: block;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .crop-card-modern::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(59, 79, 184, 0.8) 0%, rgba(82, 160, 32, 0.8) 100%);
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          z-index: 1;
+        }
+
+        .crop-card-modern:hover::before {
+          opacity: 1;
+        }
+
+        .crop-card-modern:hover {
+          transform: translateY(-12px) scale(1.02);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .crop-image-modern {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+
+        .crop-card-modern:hover .crop-image-modern {
+          transform: scale(1.1);
+        }
+
+        .crop-overlay-modern {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 1.5rem;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+          z-index: 2;
+          transform: translateY(0);
+          transition: transform 0.4s ease;
+        }
+
+        .crop-card-modern:hover .crop-overlay-modern {
+          transform: translateY(-10px);
+        }
+
+        .crop-name-modern {
+          color: #fff;
+          font-size: 1.3rem;
           font-weight: 800;
-          color: #1a5a4a;
-          margin-bottom: 2.5rem;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
 
-        .why-choose-features {
-          display: flex;
-          justify-content: center;
-          gap: 3rem;
-          flex-wrap: wrap;
-        }
-
-        .feature-item {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-        }
-
-        .feature-icon {
+        .crop-icon {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
           width: 50px;
           height: 50px;
-          background: #6DC132;
+          background: rgba(255, 255, 255, 0.9);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 1.5rem;
-          flex-shrink: 0;
+          z-index: 2;
+          opacity: 0;
+          transform: scale(0);
+          transition: all 0.4s ease;
         }
 
-        .feature-content h4 {
-          font-size: 1.1rem;
-          font-weight: 700;
-          color: #1a5a4a;
-          margin: 0 0 0.25rem 0;
+        .crop-card-modern:hover .crop-icon {
+          opacity: 1;
+          transform: scale(1);
         }
 
-        .feature-content p {
-          font-size: 0.9rem;
-          color: #3d5232;
-          margin: 0;
-        }
-
-        /* Types of Crops Section */
-        .types-of-crops-section {
-          max-width: 1280px;
-          margin: 0 auto;
-        }
-
-        .types-of-crops-title {
-          text-align: center;
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: #1a5a4a;
-          margin-bottom: 2.5rem;
-        }
-
-        .crops-grid {
-          display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 1.5rem;
-        }
-
-        .crop-card {
-          position: relative;
-          height: 180px;
-          border-radius: 16px;
-          overflow: hidden;
-          cursor: pointer;
-          transition: transform 0.3s ease;
-          text-decoration: none;
-          display: block;
-        }
-
-        .crop-card:hover {
-          transform: scale(1.05);
-        }
-
-        .crop-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .crop-overlay {
+        /* Decorative Elements */
+        .floating-shape {
           position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-          padding: 1rem;
+          border-radius: 50%;
+          opacity: 0.05;
+          pointer-events: none;
         }
 
-        .crop-name {
-          color: #fff;
-          font-size: 1rem;
-          font-weight: 700;
-          margin: 0;
+        .shape-1 {
+          width: 300px;
+          height: 300px;
+          background: #3B4FB8;
+          top: -150px;
+          right: -150px;
+        }
+
+        .shape-2 {
+          width: 200px;
+          height: 200px;
+          background: #52A020;
+          bottom: -100px;
+          left: -100px;
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-          .how-it-works-steps {
-            grid-template-columns: 1fr;
-            gap: 2rem;
+        @media (max-width: 1200px) {
+          .why-choose-cards {
+            grid-template-columns: repeat(2, 1fr);
           }
 
-          .crops-grid {
+          .crops-grid-modern {
             grid-template-columns: repeat(3, 1fr);
           }
         }
@@ -225,153 +282,97 @@ export default function DroneSpraying() {
             padding: 3rem 4%;
           }
 
-          .how-it-works-title,
           .why-choose-title,
-          .types-of-crops-title {
+          .crops-title {
             font-size: 2rem;
           }
 
-          .why-choose-features {
-            flex-direction: column;
+          .why-choose-cards {
+            grid-template-columns: 1fr;
             gap: 2rem;
           }
 
-          .crops-grid {
+          .crops-grid-modern {
             grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+          }
+
+          .crop-card-modern {
+            height: 220px;
+          }
+
+          .feature-card-modern {
+            padding: 2rem 1.5rem;
           }
         }
 
         @media (max-width: 480px) {
-          .how-it-works-title,
           .why-choose-title,
-          .types-of-crops-title {
+          .crops-title {
             font-size: 1.75rem;
           }
 
-          .step-number {
-            font-size: 2.5rem;
+          .crops-grid-modern {
+            grid-template-columns: 1fr;
           }
 
-          .crops-grid {
-            grid-template-columns: 1fr;
+          .feature-icon-modern {
+            width: 60px;
+            height: 60px;
+            font-size: 2rem;
           }
         }
       `}</style>
 
       <div className="drone-spraying-page">
-        {/* Why Choose Section */}
-        <section className="why-choose-section">
-          <h2 className="why-choose-title">Why Choose Drone Spraying?</h2>
-          <div className="why-choose-features">
-            <div className="feature-item">
-              <div className="feature-icon">📈</div>
-              <div className="feature-content">
-                <h4>Efficiency</h4>
-                <p>Spray Up to 50 Acres a Day!</p>
-              </div>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">⚡</div>
-              <div className="feature-content">
-                <h4>Higher Productivity</h4>
-                <p>15% increase in output</p>
-              </div>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">💰</div>
-              <div className="feature-content">
-                <h4>Savings</h4>
-                <p>Reduce Farming Costs by 20-30%!</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="floating-shape shape-1"></div>
+        <div className="floating-shape shape-2"></div>
 
         {/* Types of Crops Section */}
         <section className="types-of-crops-section">
-          <h2 className="types-of-crops-title">Types of crops for drone spraying</h2>
-          <div className="crops-grid">
-            <a href="/crops/sugar-cane" className="crop-card">
-              <img src="https://i.pinimg.com/1200x/11/87/53/118753baa60bcbbb4eff16011f7dd964.jpg" alt="Sugar Cane" className="crop-image" />
-              <div className="crop-overlay">
-                <h3 className="crop-name">Sugar Cane</h3>
-              </div>
-            </a>
-            <a href="/crops/paddy" className="crop-card">
-              <img src="https://i.pinimg.com/1200x/1a/06/26/1a062644fd9309daddd1764a29458335.jpg" alt="Paddy" className="crop-image" />
-              <div className="crop-overlay">
-                <h3 className="crop-name">Paddy</h3>
-              </div>
-            </a>
-            <a href="/crops/cotton" className="crop-card">
-              <img src="https://i.pinimg.com/736x/bd/28/c0/bd28c000e8371a8a1c255efc7c865b70.jpg" alt="Cotton" className="crop-image" />
-              <div className="crop-overlay">
-                <h3 className="crop-name">Cotton</h3>
-              </div>
-            </a>
-            <a href="/crops/wheat" className="crop-card">
-              <img src="https://i.pinimg.com/736x/a4/18/12/a4181249c14ce65cf17814ec6da03deb.jpg" alt="Wheat" className="crop-image" />
-              <div className="crop-overlay">
-                <h3 className="crop-name">Wheat</h3>
-              </div>
-            </a>
-            <a href="/crops/vegetable" className="crop-card">
-              <img src="https://i.pinimg.com/736x/11/ba/f6/11baf6c33a7078af8800a7a545bc218f.jpg" alt="Vegetable" className="crop-image" />
-              <div className="crop-overlay">
-                <h3 className="crop-name">Vegetable</h3>
-              </div>
-            </a>
+          <div className="crops-header">
+            <span className="section-badge">Versatile Solutions</span>
+            <h2 className="crops-title">Types of Crops for Drone Spraying</h2>
+            <p className="crops-subtitle">
+              Our drone technology is optimized for a wide variety of crops
+            </p>
           </div>
-        </section>
-
-        {/* How It Works Section */}
-        <section className="how-it-works-section">
-          <h2 className="how-it-works-title">How to Avail Vilvom's Drone Service to your Farm </h2>
-          <div className="how-it-works-steps">
-            {/* Step 01 */}
-            <div className="step-card">
-              <div className="step-image-container">
-                <div className="step-image-frame">
-                  <img src="/app.png" alt="Book via App" className="step-image" />
-                </div>
+          <div className="crops-grid-modern">
+            <a href="/crops/sugar-cane" className="crop-card-modern">
+              <span className="crop-icon">🌾</span>
+              <img src="https://i.pinimg.com/1200x/11/87/53/118753baa60bcbbb4eff16011f7dd964.jpg" alt="Sugar Cane" className="crop-image-modern" />
+              <div className="crop-overlay-modern">
+                <h3 className="crop-name-modern">Sugar Cane</h3>
               </div>
-              <div className="step-content">
-                <h3 className="step-title">Book via the Vilvom App</h3>
-                <p className="step-description">
-                  Download the Leher App and schedule drone spray service for your crops with just three clicks.
-                </p>
+            </a>
+            <a href="/crops/paddy" className="crop-card-modern">
+              <span className="crop-icon">🌾</span>
+              <img src="https://i.pinimg.com/1200x/1a/06/26/1a062644fd9309daddd1764a29458335.jpg" alt="Paddy" className="crop-image-modern" />
+              <div className="crop-overlay-modern">
+                <h3 className="crop-name-modern">Paddy</h3>
               </div>
-            </div>
-
-            {/* Step 02 */}
-            <div className="step-card">
-              <div className="step-image-container">
-                <div className="step-image-frame">
-                  <img src="/drone.png" alt="Pilot Sprays" className="step-image" />
-                </div>
+            </a>
+            <a href="/crops/cotton" className="crop-card-modern">
+              <span className="crop-icon">🌾</span>
+              <img src="https://i.pinimg.com/736x/bd/28/c0/bd28c000e8371a8a1c255efc7c865b70.jpg" alt="Cotton" className="crop-image-modern" />
+              <div className="crop-overlay-modern">
+                <h3 className="crop-name-modern">Cotton</h3>
               </div>
-              <div className="step-content">
-                <h3 className="step-title">Pilot Sprays Your Crops</h3>
-                <p className="step-description">
-                  Our trained drone pilot arrives at your farm on the scheduled day, ready to spray your crops with precision.
-                </p>
+            </a>
+            <a href="/crops/wheat" className="crop-card-modern">
+              <span className="crop-icon">🌾</span>
+              <img src="https://i.pinimg.com/736x/a4/18/12/a4181249c14ce65cf17814ec6da03deb.jpg" alt="Wheat" className="crop-image-modern" />
+              <div className="crop-overlay-modern">
+                <h3 className="crop-name-modern">Wheat</h3>
               </div>
-            </div>
-
-            {/* Step 03 */}
-            <div className="step-card">
-              <div className="step-image-container">
-                <div className="step-image-frame">
-                  <img src="/payment.png" alt="Pay after Done" className="step-image" />
-                </div>
+            </a>
+            <a href="/crops/vegetable" className="crop-card-modern">
+              <span className="crop-icon">🌾</span>
+              <img src="https://i.pinimg.com/736x/11/ba/f6/11baf6c33a7078af8800a7a545bc218f.jpg" alt="Vegetable" className="crop-image-modern" />
+              <div className="crop-overlay-modern">
+                <h3 className="crop-name-modern">Vegetable</h3>
               </div>
-              <div className="step-content">
-                <h3 className="step-title">Pay after Spraying Done</h3>
-                <p className="step-description">
-                  After the service is completed to your satisfaction, make a secure payment directly through the app.
-                </p>
-              </div>
-            </div>
+            </a>
           </div>
         </section>
       </div>

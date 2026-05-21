@@ -886,16 +886,16 @@ h2 {
 }
 
 /* ── PEST DETECTION (AgroScout-inspired) ── */
-.pest-section { background: var(--blue); }
+.pest-section { background: #ffffff; }
 
 .pest-inner {
   max-width: 1280px;
   margin: 0 auto;
 }
 
-.pest-section h2 { color: #fff; }
-.pest-section .stag { background: rgba(109,193,50,0.15); color: #a8e06e; }
-.pest-section .section-sub { color: rgba(255,255,255,0.6); }
+.pest-section h2 { color: #1a1a1a; }
+.pest-section .stag { background: rgba(109,193,50,0.15); color: #52A020; }
+.pest-section .section-sub { color: #666; }
 
 .pest-grid {
   display: grid;
@@ -905,8 +905,8 @@ h2 {
 }
 
 .pest-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
   border-radius: 18px;
   padding: 1.6rem;
   transition: background 0.2s, border-color 0.2s;
@@ -914,8 +914,8 @@ h2 {
 }
 
 .pest-card:hover {
-  background: rgba(109,193,50,0.08);
-  border-color: rgba(109,193,50,0.3);
+  background: rgba(82, 160, 32, 0.05);
+  border-color: #52A020;
 }
 
 .pest-card-icon { font-size: 2rem; margin-bottom: 1rem; }
@@ -923,7 +923,7 @@ h2 {
 .pest-card h3 {
   font-size: 0.9rem;
   font-weight: 700;
-  color: #fff;
+  color: #1a1a1a;
   margin-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -931,13 +931,13 @@ h2 {
 
 .pest-card p {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.55);
+  color: #666;
   line-height: 1.75;
 }
 
 .pest-detect-bar {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
   border-radius: 18px;
   padding: 1.8rem;
 }
@@ -947,7 +947,7 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: rgba(255,255,255,0.45);
+  color: #666;
   margin-bottom: 1.2rem;
 }
 
@@ -966,7 +966,7 @@ h2 {
 .detect-label {
   font-size: 0.78rem;
   font-weight: 600;
-  color: rgba(255,255,255,0.75);
+  color: #1a1a1a;
   width: 150px;
   flex-shrink: 0;
 }
@@ -974,7 +974,7 @@ h2 {
 .detect-bar-track {
   flex: 1;
   height: 8px;
-  background: rgba(255,255,255,0.08);
+  background: #e0e0e0;
   border-radius: 4px;
   overflow: hidden;
 }
