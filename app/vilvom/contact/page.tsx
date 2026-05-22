@@ -1,13 +1,5 @@
-import ContactUs from "../../Pages/ContactUs";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import ContactUs from "../../Pages/vilvom/contactus";
 
 export default function Page() {
-  return (
-    <>
-      <Header />
-      <ContactUs />
-      <Footer />
-    </>
-  );
+  return <ContactUs />;
 }
