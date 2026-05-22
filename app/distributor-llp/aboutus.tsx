@@ -4,7 +4,7 @@ import VilvomFooter from "./Components/footer";
 
 const values = [
   {
-    title: "Seva Before Self",
+    title: "Success Through Service",
     body: "We place the needs of our retail partners, farmers, and communities ahead of our own gains, ensuring every distribution decision is guided by genuine service and shared prosperity.",
     img: "https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&q=80",
     alt: "Volunteers serving community food distribution",
@@ -22,20 +22,20 @@ const values = [
     alt: "Two business people shaking hands over a deal",
   },
   {
-    title: "Do More With Less",
-    body: "Rooted in Gandhian frugality, we design lean, resource-conscious supply chains that reduce waste, lower costs, and pass real savings to our partners without compromising quality or service.",
+    title: "Maximizing Value Through Simplicity",
+    body: "Rooted in purposeful simplicity, we design lean, resource-conscious supply chains that reduce waste, lower costs, and pass real savings to our partners without compromising quality or service.",
     img: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&q=80",
     alt: "Recycling and sustainable resource management",
   },
   {
-    title: "Uplift the Small Seller",
-    body: "We actively empower kirana stores, micro-retailers, and first-generation entrepreneurs by providing them access, credit support, and market knowledge that levels the playing field.",
+    title: "Inclusive Growth Across the Value Chain",
+    body: "We actively empower micro-retailers, and first-generation entrepreneurs by providing them access, credit support, and market knowledge that levels the playing field.",
     img: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=400&q=80",
     alt: "Small kirana shop owner at counter",
   },
   {
-    title: "Dharma in Every Deal",
-    body: "We conduct every transaction with integrity, accountability, and ethical clarity — because sustainable business is built not on short-term profit, but on the trust earned through righteous action.",
+    title: "Ethics at the Heart of Every Deal",
+    body: "We conduct every transaction with integrity, accountability, and ethical clarity because sustainable business is built not on short-term profit, but on the trust earned through righteous action.",
     img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80",
     alt: "Person signing a contract with integrity",
   },
@@ -91,7 +91,7 @@ export default function AboutUs() {
           {/* Right: paragraphs */}
           <div style={{ flex: 1, minWidth: 280 }}>
             <p style={{ color: "#444", fontSize: "0.9rem", lineHeight: 1.85, marginBottom: "1.25rem" }}>
-              Vilvom Distributor Pvt Ltd was established with a vision to revolutionise agricultural
+              Vilvom LLP Distributor was established with a vision to revolutionise agricultural
               distribution and drone technology services across South India. Founded by
               passionate agri-tech entrepreneurs, Vilvom has leveraged deep expertise in
               precision agriculture, drone operations, and supply-chain management to build
@@ -101,7 +101,7 @@ export default function AboutUs() {
               record of double-digit annual growth.
             </p>
             <p style={{ color: "#444", fontSize: "0.9rem", lineHeight: 1.85, marginBottom: "1.25rem" }}>
-              Vilvom distinguishes itself within the industry as an acclaimed agri-tech
+              Vilvom LLP Distributor distinguishes itself within the industry as an acclaimed agri-tech
               distribution firm, having received numerous prestigious honours from national
               agricultural bodies and technology councils. Currently, we operate as the
               exclusive drone services partner for leading FMCG and pharmaceutical brands
@@ -245,7 +245,7 @@ export default function AboutUs() {
                 >
                   {v.title}
                 </h3>
-                <p style={{ color: "#555", fontSize: "0.82rem", lineHeight: 1.75, margin: 0 }}>
+                <p style={{ color: "#1a3a6b", fontSize: "0.82rem", lineHeight: 1.75, margin: 0, fontWeight: 600 }}>
                   {v.body}
                 </p>
               </div>

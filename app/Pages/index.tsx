@@ -306,7 +306,7 @@ export default function LandingPage() {
             </Link>
 
             {/* Sales & Distribution Card */}
-            <Link href="/vilvom" className="landing-card">
+            <Link href="/distributor-llp" className="landing-card">
               <div className="card-left">
                 <img
                   src="/FMCG.png"

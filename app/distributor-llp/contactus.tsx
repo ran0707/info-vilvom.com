@@ -87,10 +87,8 @@ export default function ContactUs() {
               margin: "0 0 1.75rem 0",
             }}
           >
-            Vilvom serves a diverse range of agri-tech and drone service companies
-            throughout South India. If you have any questions, need assistance, or wish
-            to join our dream team, we are here to assist. We invite you to fill out the
-            form below, and we will be delighted to get back to you shortly.
+            Vilvom serves a growing network of FMCG distribution partners, retailers, and e-commerce customers across South India. If you have any inquiries, require business support, or are interested in partnering with us, our team is always ready to assist you. We invite you to fill out the form below, and we will get back to you shortly with the right solutions for your business needs.
+
           </p>
 
           {/* Form */}

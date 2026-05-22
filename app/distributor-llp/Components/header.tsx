@@ -3,9 +3,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Home", href: "/vilvom" },
-  { label: "About Us", href: "/vilvom/about" },
-  { label: "Contact Us", href: "/vilvom/contact" },
+  { label: "Home", href: "/distributor-llp" },
+  { label: "About Us", href: "/distributor-llp/about" },
+  { label: "Contact Us", href: "/distributor-llp/contact" },
 ];
 
 export default function VilvomHeader() {
@@ -37,7 +37,7 @@ export default function VilvomHeader() {
       >
         {/* Left: Logo + Name */}
         <Link
-          href="/vilvom"
+          href="/distributor-llp"
           style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.6rem" }}
         >
           <img
@@ -48,12 +48,14 @@ export default function VilvomHeader() {
           <span
             style={{
               fontWeight: 700,
-              fontSize: "1rem",
-              color: "#2e7d32",
+              fontSize: "1.9rem",
               letterSpacing: "0.01em",
             }}
           >
-            Vilvom Distributor Pvt Ltd
+            <span style={{ color: "#3B4FB8" }}>V</span>
+            <span style={{ color: "#2e7d32" }}>ilvom </span>
+            <span style={{ color: "#3B4FB8" }}>LLP Distributor</span>
+
           </span>
         </Link>
 

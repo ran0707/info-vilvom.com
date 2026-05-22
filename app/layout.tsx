@@ -15,7 +15,15 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Vilvom",
   description: "Rooted in Nature, Grown for life",
-
+  authors: [{ name: "Bala Surya", url: "https://www.balasurya.me" }],
+  creator: "Bala Surya",
+  publisher: "Vilvom LLP",
+  metadataBase: new URL("https://www.vilvom.com"),
+  other: {
+    developer: "Bala Surya",
+    "developer-portfolio": "https://www.balasurya.me",
+  },
+  
   icons: {
     icon: "/icon.jpeg",
     shortcut: "/icon.jpeg",

@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
 
           {/* Legal Links */}
-          <div className="footer-column footer-column-blue">
+          {/* <div className="footer-column footer-column-blue">
             <h3 className="footer-column-title">Legal</h3>
             <ul className="footer-links">
               <li><a href="#terms">Terms & Conditions</a></li>
@@ -68,7 +68,7 @@ export default function Footer() {
               <li><a href="#refund">Refund Policy</a></li>
               <li><a href="#cookie">Cookie Policy</a></li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Get In Touch */}
           <div className="footer-column footer-column-green">

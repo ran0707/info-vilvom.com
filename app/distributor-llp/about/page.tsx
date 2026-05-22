@@ -1,4 +1,4 @@
-import AboutUs from "../../distributor-llp/aboutus";
+import AboutUs from "../aboutus";
 
 export default function Page() {
   return <AboutUs />;
