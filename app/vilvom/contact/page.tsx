@@ -1,4 +1,4 @@
-import ContactUs from "../../Pages/vilvom/contactus";
+import ContactUs from "../../distributor-llp/contactus";
 
 export default function Page() {
   return <ContactUs />;

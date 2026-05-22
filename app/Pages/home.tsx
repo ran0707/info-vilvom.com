@@ -1,9 +1,9 @@
 
 "use client";
 import { useEffect } from "react";
-import TopBanner from "../components/TopBanner";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import TopBanner from "./components/TopBanner";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Technology from "./DiscoverVilvom";
 import DroneSpraying from "./DroneSpraying";
 import PestDisease from "./PestDisease";

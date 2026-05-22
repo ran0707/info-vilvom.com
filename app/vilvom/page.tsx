@@ -1,4 +1,4 @@
-import VilvomHome from "../Pages/vilvom/home";
+import VilvomHome from "../distributor-llp/home";
 
 export default function Page() {
   return <VilvomHome />;
