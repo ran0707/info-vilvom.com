@@ -207,15 +207,17 @@ nav ul a:hover { color: var(--green); }
 }
 
 .hero-center-subtitle {
-  font-size: clamp(8.5rem, 7vw, 7rem);
-  font-weight: 900;
+  font-size: 1.55rem;
+  font-weight: 600;
   color: #fff;
   line-height: 1.4;
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-  margin: 0;
+  margin: 0 auto;
   opacity: 0.95;
   text-align: center;
-  letter-spacing: 0.15em;
+  max-width: 100%;
+  padding: 0 2rem;
+  white-space: nowrap;
 }
 
 .app-store-buttons {
