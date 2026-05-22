@@ -31,7 +31,7 @@ export default function Footer() {
               />
             </div>
             <p className="footer-brand-description">
-              Empowering sustainable tea agriculture through advanced AI-driven plant health diagnostics and precision crop management technologies.
+              Empowering sustainable agriculture through advanced AI-driven plant health diagnostics and precision crop management technologies.
             </p>
             {/* <p className="footer-phone">+91 81110 15577</p> */}
           </div>
@@ -52,11 +52,10 @@ export default function Footer() {
           <div className="footer-column footer-column-green">
             <h3 className="footer-column-title">Services</h3>
             <ul className="footer-links">
-              <li><a href="#drone-spray">Drone Spraying</a></li>
-              <li><a href="#pest">Pest Detection</a></li>
-              <li><a href="#disease">Disease Management</a></li>
-              <li><a href="#solutions">Farm Solutions</a></li>
-              <li><a href="#consulting">Consulting</a></li>
+              <li><a href="#drone-spraying">Pest Detection</a></li>
+              <li><a href="#how-it-works">Vilvom Drones</a></li>
+              <li><a href="#pest">Vilvom App</a></li>
+              <li><a href="#contact">Contact Us</a></li>
             </ul>
           </div>
 
@@ -76,7 +75,7 @@ export default function Footer() {
             <h3 className="footer-column-title">Get In Touch</h3>
             <div className="footer-contact">
               <p className="footer-address">
-                Vilvom LLP, Coimbatore, Tamil Nadu, India
+                Vilvom LLP,<br /> Coimbatore, Tamil Nadu, India
               </p>
               {/* <p className="footer-contact-item">📞 +91 81110 15577</p> */}
               <p className="footer-contact-item">✉️ support@vilvom.in</p>

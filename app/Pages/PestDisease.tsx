@@ -2,8 +2,194 @@
 
 export default function PestDisease() {
   return (
-    <section id="pest" className="section-full pest-section" style={{ background: '#ffffff' }}>
-      <div className="pest-inner">
+    <>
+      <style>{`
+        /* Responsive Media Queries for Pest Disease Section */
+        @media (max-width: 1024px) {
+          .pest-mobile-showcase {
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 2.5rem !important;
+          }
+
+          .pest-mobile-frame {
+            width: 280px !important;
+            height: 560px !important;
+          }
+
+          .pest-center-content {
+            min-width: 100% !important;
+            text-align: center !important;
+          }
+
+          .pest-center-content h3 {
+            font-size: 1.75rem !important;
+          }
+
+          .pest-center-content p {
+            font-size: 1rem !important;
+          }
+
+          .pest-lang-panel {
+            width: 280px !important;
+            height: 560px !important;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .pest-mobile-frame {
+            width: 260px !important;
+            height: 520px !important;
+            padding: 12px !important;
+          }
+
+          .pest-mobile-frame .phone-screen {
+            height: 496px !important;
+          }
+
+          .pest-center-content h3 {
+            font-size: 1.5rem !important;
+          }
+
+          .pest-center-content p {
+            font-size: 0.95rem !important;
+          }
+
+          .pest-center-content ul li {
+            font-size: 0.9rem !important;
+            margin-bottom: 0.6rem !important;
+          }
+
+          .pest-lang-panel {
+            width: 260px !important;
+            height: 520px !important;
+            padding: 1.5rem 1.25rem !important;
+          }
+
+          .pest-lang-item {
+            padding: 0.85rem !important;
+          }
+
+          .pest-lang-num {
+            width: 35px !important;
+            height: 35px !important;
+            font-size: 0.9rem !important;
+          }
+
+          .pest-lang-name {
+            font-size: 0.9rem !important;
+          }
+
+          .pest-lang-native {
+            font-size: 0.85rem !important;
+          }
+
+          /* Camellia Dataset Section */
+          .camellia-section h3 {
+            font-size: 2rem !important;
+          }
+
+          .camellia-section p {
+            font-size: 1rem !important;
+          }
+
+          .camellia-laptop {
+            padding: 15px 20px 0 !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .pest-mobile-frame {
+            width: 240px !important;
+            height: 480px !important;
+            padding: 10px !important;
+            border-radius: 35px !important;
+          }
+
+          .pest-mobile-frame .phone-screen {
+            height: 460px !important;
+            border-radius: 25px !important;
+          }
+
+          .pest-center-content h3 {
+            font-size: 1.35rem !important;
+          }
+
+          .pest-center-content p {
+            font-size: 0.85rem !important;
+          }
+
+          .pest-center-content ul li {
+            font-size: 0.8rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+
+          .pest-center-content ul li span:first-child {
+            font-size: 1.2rem !important;
+          }
+
+          .pest-lang-panel {
+            width: 240px !important;
+            height: 480px !important;
+            padding: 1.25rem 1rem !important;
+            border-radius: 35px !important;
+          }
+
+          .pest-lang-item {
+            padding: 0.75rem !important;
+            border-radius: 12px !important;
+          }
+
+          .pest-lang-num {
+            width: 32px !important;
+            height: 32px !important;
+            font-size: 0.85rem !important;
+          }
+
+          .pest-lang-name {
+            font-size: 0.85rem !important;
+          }
+
+          .pest-lang-native {
+            font-size: 0.8rem !important;
+          }
+
+          /* Camellia Dataset Section */
+          .camellia-section {
+            margin: 4rem 0 3rem !important;
+          }
+
+          .camellia-section h3 {
+            font-size: 1.5rem !important;
+          }
+
+          .camellia-section p {
+            font-size: 0.9rem !important;
+            padding: 0 1rem !important;
+          }
+
+          .camellia-laptop {
+            padding: 12px 15px 0 !important;
+            border-radius: 15px 15px 0 0 !important;
+          }
+
+          .camellia-laptop .phone-screen {
+            border-radius: 6px 6px 0 0 !important;
+          }
+
+          .camellia-base {
+            height: 25px !important;
+            border-radius: 0 0 15px 15px !important;
+          }
+
+          .camellia-base > div {
+            width: 150px !important;
+            height: 8px !important;
+          }
+        }
+      `}</style>
+      <section id="pest" className="section-full pest-section" style={{ background: '#ffffff' }}>
+        <div className="pest-inner">
         <div className="section" style={{ paddingTop: 0, paddingBottom: "2rem" }}>
           <h2><span style={{ color: '#3B4FB8' }}>Vilv<img src="/o.png" alt="o" style={{ display: 'inline', height: '1em', verticalAlign: 'baseline', margin: '0', position: 'relative', top: '0.25em' }} />m</span> <span style={{ color: '#52A020' }}>App</span>
                 <sup style={{ fontSize: '0.5em', marginLeft: '2px', color: '#1a1a1a' }}>™</sup><br /> 
@@ -14,7 +200,7 @@ export default function PestDisease() {
         <div className="section" style={{ paddingTop: 0, paddingBottom: 0 }}>
           
           {/* Mobile App Showcase */}
-          <div style={{ 
+          <div className="pest-mobile-showcase" style={{ 
             display: 'flex', 
             justifyContent: 'space-between', 
             alignItems: 'flex-start',
@@ -23,7 +209,7 @@ export default function PestDisease() {
             flexWrap: 'wrap'
           }}>
             {/* Mobile Frame */}
-            <div style={{
+            <div className="pest-mobile-frame" style={{
               position: 'relative',
               width: '320px',
               height: '640px',
@@ -167,7 +353,7 @@ export default function PestDisease() {
             </div>
             
             {/* Center Content - Instructions */}
-            <div style={{ flex: 1, minWidth: '300px' }}>
+            <div className="pest-center-content" style={{ flex: 1, minWidth: '300px' }}>
               <h3 style={{ 
                 fontSize: '2rem', 
                 fontWeight: '800', 
@@ -300,12 +486,12 @@ export default function PestDisease() {
                   }
                 `}</style>
                 {[
-                  { num: '1', name: 'Tamil', native: 'தமிழ்' },
-                  { num: '2', name: 'Telugu', native: 'తెలుగు' },
+                  { num: '1', name: 'Hindi', native: 'हिन्दी' },
+                  { num: '2', name: 'Assamese', native: 'অসমীয়া' },
                   { num: '3', name: 'Bengali', native: 'বাংলা' },
-                  { num: '4', name: 'Assamese', native: 'অসমীয়া' },
-                  { num: '5', name: 'Malayalam', native: 'മലയാളം' },
-                  { num: '6', name: 'Hindi', native: 'हिन्दी' },
+                  { num: '4', name: 'Malayalam', native: 'മലയാളം' },
+                  { num: '5', name: 'Tamil', native: 'தமிழ்' },
+                  { num: '6', name: 'Telugu', native: 'తెలుగు' },
                   { num: '7', name: 'English', native: 'English' }
                 ].map((lang) => (
                   <div key={lang.num} style={{
@@ -475,5 +661,6 @@ export default function PestDisease() {
         </div>
       </div>
     </section>
+    </>
   );
 }

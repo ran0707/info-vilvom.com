@@ -1359,6 +1359,23 @@ footer {
   .stats-strip {
     gap: 4%;
   }
+
+  /* Hero subtitle responsive */
+  .hero-center-subtitle {
+    transform: translateX(0) !important;
+    font-size: 1.2rem !important;
+    white-space: normal !important;
+  }
+
+  /* App store buttons */
+  .app-store-buttons {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .store-button img {
+    height: 40px;
+  }
 }
 
 /* ── Mobile: up to 767px ── */
@@ -1667,6 +1684,54 @@ footer {
 
   .drone-stats {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* Hero subtitle for small mobile */
+  .hero-center-subtitle {
+    transform: translateX(0) !important;
+    font-size: 0.9rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  /* App store buttons for small mobile */
+  .app-store-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .store-button img {
+    height: 40px;
+  }
+}
+
+/* Additional responsive styles for hero subtitle */
+@media (max-width: 1024px) {
+  .hero-center-subtitle {
+    transform: translateX(0) !important;
+    font-size: 1.2rem !important;
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-center-subtitle {
+    transform: translateX(0) !important;
+    font-size: 1rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .app-store-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .store-button img {
+    height: 45px;
   }
 }
 

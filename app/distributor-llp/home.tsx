@@ -6,21 +6,311 @@ import Link from "next/link";
 
 export default function VilvomHome() {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        fontFamily: "var(--font-geist-sans, Georgia, serif)",
-        background: "#fff",
-      }}
-    >
-      {/* HEADER */}
-      <VilvomHeader />
+    <>
+      <style>{`
+        /* Responsive Media Queries for Distributor LLP */
+        
+        /* Tablet: 768px - 1024px */
+        @media (max-width: 1024px) {
+          .distributor-hero {
+            height: 350px !important;
+          }
+
+          .distributor-hero-cta {
+            bottom: 2rem !important;
+            left: 2rem !important;
+            max-width: 280px !important;
+            padding: 1.25rem 1.5rem !important;
+          }
+
+          .distributor-hero-cta h2 {
+            font-size: 1.2rem !important;
+          }
+
+          .distributor-hero-cta p {
+            font-size: 0.78rem !important;
+          }
+
+          .distributor-about {
+            padding: 3rem 1.5rem 1.5rem !important;
+          }
+
+          .distributor-about h2 {
+            font-size: 1.75rem !important;
+          }
+
+          .distributor-about p {
+            font-size: 0.95rem !important;
+          }
+
+          .distributor-south-india {
+            padding: 3.5rem 2rem !important;
+          }
+
+          .distributor-south-india-content {
+            gap: 2.5rem !important;
+          }
+
+          .distributor-south-india h2 {
+            font-size: 1.75rem !important;
+          }
+
+          .distributor-south-india p {
+            font-size: 0.9rem !important;
+          }
+
+          .distributor-south-india-map {
+            width: 220px !important;
+            height: 260px !important;
+          }
+
+          .distributor-services-header {
+            padding: 0 2.5rem 1.5rem !important;
+          }
+
+          .distributor-services-header h2 {
+            font-size: 2rem !important;
+          }
+
+          .distributor-service-item {
+            padding: 1.75rem 2.5rem !important;
+            gap: 1.5rem !important;
+          }
+
+          .distributor-service-item h3 {
+            font-size: 1rem !important;
+          }
+
+          .distributor-service-item p {
+            font-size: 0.82rem !important;
+          }
+
+          .distributor-service-image {
+            width: 320px !important;
+            height: 240px !important;
+          }
+        }
+
+        /* Mobile: up to 767px */
+        @media (max-width: 767px) {
+          .distributor-hero {
+            height: 300px !important;
+          }
+
+          .distributor-hero-cta {
+            bottom: 1.5rem !important;
+            left: 1.5rem !important;
+            right: 1.5rem !important;
+            max-width: none !important;
+            padding: 1rem 1.25rem !important;
+          }
+
+          .distributor-hero-cta h2 {
+            font-size: 1.1rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+
+          .distributor-hero-cta p {
+            font-size: 0.75rem !important;
+            margin-bottom: 0.75rem !important;
+          }
+
+          .distributor-hero-cta a {
+            padding: 0.4rem 1rem !important;
+            font-size: 0.75rem !important;
+          }
+
+          .distributor-about {
+            padding: 2.5rem 1.25rem 1.5rem !important;
+          }
+
+          .distributor-about h2 {
+            font-size: 1.5rem !important;
+            margin-bottom: 1rem !important;
+          }
+
+          .distributor-about p {
+            font-size: 0.9rem !important;
+            line-height: 1.7 !important;
+          }
+
+          .distributor-about button {
+            padding: 0.5rem 1.25rem !important;
+            font-size: 0.8rem !important;
+            margin-top: 1rem !important;
+          }
+
+          .distributor-south-india {
+            padding: 3rem 1.5rem !important;
+          }
+
+          .distributor-south-india-content {
+            flex-direction: column !important;
+            gap: 2rem !important;
+          }
+
+          .distributor-south-india-text {
+            flex: 1 1 100% !important;
+            min-width: 100% !important;
+          }
+
+          .distributor-south-india h2 {
+            font-size: 1.5rem !important;
+            margin-bottom: 1rem !important;
+          }
+
+          .distributor-south-india p {
+            font-size: 0.85rem !important;
+            line-height: 1.7 !important;
+          }
+
+          .distributor-south-india-map {
+            width: 100% !important;
+            max-width: 220px !important;
+            height: 250px !important;
+            margin: 0 auto !important;
+          }
+
+          .distributor-services {
+            padding-top: 2.5rem !important;
+          }
+
+          .distributor-services-header {
+            padding: 0 1.5rem 1.5rem !important;
+          }
+
+          .distributor-services-header h2 {
+            font-size: 1.5rem !important;
+          }
+
+          .distributor-services-header p {
+            font-size: 0.8rem !important;
+          }
+
+          .distributor-service-item {
+            flex-direction: column !important;
+            padding: 1.5rem 1.5rem !important;
+            gap: 1.25rem !important;
+            min-height: auto !important;
+          }
+
+          .distributor-service-content {
+            flex: 1 1 100% !important;
+          }
+
+          .distributor-service-item h3 {
+            font-size: 0.95rem !important;
+            margin-bottom: 0.75rem !important;
+          }
+
+          .distributor-service-item p {
+            font-size: 0.8rem !important;
+            line-height: 1.7 !important;
+          }
+
+          .distributor-service-image {
+            width: 100% !important;
+            height: 220px !important;
+            flex-shrink: 1 !important;
+          }
+
+          .distributor-service-image img {
+            width: 100% !important;
+            height: 220px !important;
+          }
+        }
+
+        /* Small Mobile: up to 480px */
+        @media (max-width: 480px) {
+          .distributor-hero {
+            height: 280px !important;
+          }
+
+          .distributor-hero-cta {
+            bottom: 1rem !important;
+            left: 1rem !important;
+            right: 1rem !important;
+            padding: 0.875rem 1rem !important;
+          }
+
+          .distributor-hero-cta h2 {
+            font-size: 1rem !important;
+          }
+
+          .distributor-hero-cta p {
+            font-size: 0.7rem !important;
+            line-height: 1.5 !important;
+          }
+
+          .distributor-about {
+            padding: 2rem 1rem 1.25rem !important;
+          }
+
+          .distributor-about h2 {
+            font-size: 1.35rem !important;
+          }
+
+          .distributor-about p {
+            font-size: 0.85rem !important;
+          }
+
+          .distributor-south-india {
+            padding: 2.5rem 1rem !important;
+          }
+
+          .distributor-south-india h2 {
+            font-size: 1.35rem !important;
+          }
+
+          .distributor-south-india p {
+            font-size: 0.8rem !important;
+          }
+
+          .distributor-services-header {
+            padding: 0 1rem 1.25rem !important;
+          }
+
+          .distributor-services-header h2 {
+            font-size: 1.35rem !important;
+          }
+
+          .distributor-service-item {
+            padding: 1.25rem 1rem !important;
+          }
+
+          .distributor-service-item h3 {
+            font-size: 0.9rem !important;
+          }
+
+          .distributor-service-item p {
+            font-size: 0.75rem !important;
+          }
+
+          .distributor-service-image {
+            height: 200px !important;
+          }
+
+          .distributor-service-image img {
+            height: 200px !important;
+          }
+        }
+      `}</style>
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          fontFamily: "var(--font-geist-sans, Georgia, serif)",
+          background: "#fff",
+        }}
+      >
+        {/* HEADER */}
+        <VilvomHeader />
 
       {/* HERO SECTION */}
       <section
         id="home"
+        className="distributor-hero"
         style={{
           position: "relative",
           width: "100%",
@@ -47,6 +337,7 @@ export default function VilvomHome() {
           }}
         />
         <div
+          className="distributor-hero-cta"
           style={{
             position: "absolute",
             bottom: "2.5rem",
@@ -108,6 +399,7 @@ export default function VilvomHome() {
       {/* ABOUT US SECTION */}
       <section
         id="about"
+        className="distributor-about"
         style={{
           maxWidth: 1100,
           margin: "0 auto",
@@ -169,6 +461,7 @@ export default function VilvomHome() {
 
       {/* SOUTH INDIA DISTRIBUTOR SECTION */}
       <section
+        className="distributor-south-india"
         style={{
           width: "100%",
           background: "#1a3a6b",
@@ -177,6 +470,7 @@ export default function VilvomHome() {
         }}
       >
         <div
+          className="distributor-south-india-content"
           style={{
             maxWidth: 1100,
             margin: "0 auto",
@@ -187,7 +481,7 @@ export default function VilvomHome() {
             flexWrap: "wrap",
           }}
         >
-          <div style={{ flex: "1 1 420px", minWidth: 280 }}>
+          <div className="distributor-south-india-text" style={{ flex: "1 1 420px", minWidth: 280 }}>
             <h2
               style={{
                 color: "#4caf50",
@@ -219,6 +513,7 @@ export default function VilvomHome() {
           </div>
 
           <div
+            className="distributor-south-india-map"
             style={{
               flex: "0 0 auto",
               width: 260,
@@ -244,6 +539,7 @@ export default function VilvomHome() {
       {/* OUR SERVICES SECTION */}
       <section
         id="services"
+        className="distributor-services"
         style={{
           width: "100%",
           background: "#fff",
@@ -251,7 +547,7 @@ export default function VilvomHome() {
           boxSizing: "border-box",
         }}
       >
-        <div style={{ padding: "0 3rem 2rem" }}>
+        <div className="distributor-services-header" style={{ padding: "0 3rem 2rem" }}>
           <h2
             style={{
               color: "#2e7d32",
@@ -297,6 +593,7 @@ export default function VilvomHome() {
           <div key={service.title}>
             <div style={{ borderTop: "1px solid #ddd", width: "100%" }} />
             <div
+              className="distributor-service-item"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -308,6 +605,7 @@ export default function VilvomHome() {
               }}
             >
               <div
+                className="distributor-service-content"
                 style={{
                   flex: 1,
                   display: "flex",
@@ -339,6 +637,7 @@ export default function VilvomHome() {
               </div>
 
               <div
+                className="distributor-service-image"
                 style={{
                   flexShrink: 0,
                   width: 380,
@@ -367,5 +666,6 @@ export default function VilvomHome() {
       {/* FOOTER */}
       <VilvomFooter />
     </div>
+    </>
   );
 }

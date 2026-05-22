@@ -324,57 +324,9 @@ export default function DroneSpraying() {
         }
       `}</style>
 
-      <div className="drone-spraying-page">
+      <div id="drone-spraying" className="drone-spraying-page">
         <div className="floating-shape shape-1"></div>
         <div className="floating-shape shape-2"></div>
-
-        {/* Types of Crops Section */}
-        <section className="types-of-crops-section">
-          <div className="crops-header">
-            <span className="section-badge">Versatile Solutions</span>
-            <h2 className="crops-title">Types of Crops for Drone Spraying</h2>
-            <p className="crops-subtitle">
-              Our drone technology is optimized for a wide variety of crops
-            </p>
-          </div>
-          <div className="crops-grid-modern">
-            <a href="/crops/sugar-cane" className="crop-card-modern">
-              <span className="crop-icon">🌾</span>
-              <img src="https://i.pinimg.com/1200x/11/87/53/118753baa60bcbbb4eff16011f7dd964.jpg" alt="Sugar Cane" className="crop-image-modern" />
-              <div className="crop-overlay-modern">
-                <h3 className="crop-name-modern">Sugar Cane</h3>
-              </div>
-            </a>
-            <a href="/crops/paddy" className="crop-card-modern">
-              <span className="crop-icon">🌾</span>
-              <img src="https://i.pinimg.com/1200x/1a/06/26/1a062644fd9309daddd1764a29458335.jpg" alt="Paddy" className="crop-image-modern" />
-              <div className="crop-overlay-modern">
-                <h3 className="crop-name-modern">Paddy</h3>
-              </div>
-            </a>
-            <a href="/crops/cotton" className="crop-card-modern">
-              <span className="crop-icon">🌾</span>
-              <img src="https://i.pinimg.com/736x/bd/28/c0/bd28c000e8371a8a1c255efc7c865b70.jpg" alt="Cotton" className="crop-image-modern" />
-              <div className="crop-overlay-modern">
-                <h3 className="crop-name-modern">Cotton</h3>
-              </div>
-            </a>
-            <a href="/crops/wheat" className="crop-card-modern">
-              <span className="crop-icon">🌾</span>
-              <img src="https://i.pinimg.com/736x/a4/18/12/a4181249c14ce65cf17814ec6da03deb.jpg" alt="Wheat" className="crop-image-modern" />
-              <div className="crop-overlay-modern">
-                <h3 className="crop-name-modern">Wheat</h3>
-              </div>
-            </a>
-            <a href="/crops/vegetable" className="crop-card-modern">
-              <span className="crop-icon">🌾</span>
-              <img src="https://i.pinimg.com/736x/11/ba/f6/11baf6c33a7078af8800a7a545bc218f.jpg" alt="Vegetable" className="crop-image-modern" />
-              <div className="crop-overlay-modern">
-                <h3 className="crop-name-modern">Vegetable</h3>
-              </div>
-            </a>
-          </div>
-        </section>
       </div>
     </>
   );

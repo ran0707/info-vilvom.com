@@ -38,8 +38,11 @@ export default function Header() {
         <li>
           <a href="#about" onClick={() => setMenuOpen(false)}>About Us</a>
         </li>
+        {/* <li>
+          <a href="#drone-spraying" onClick={() => setMenuOpen(false)}>Vilvom Drones</a>
+        </li> */}
         <li>
-          <a href="#pest" onClick={() => setMenuOpen(false)}>Vilvom Drones</a>
+          <a href="#how-it-works" onClick={() => setMenuOpen(false)}>Vilvom Drones</a>
         </li>
         <li>
           <a href="#pest" onClick={() => setMenuOpen(false)}>Vilvom App</a>

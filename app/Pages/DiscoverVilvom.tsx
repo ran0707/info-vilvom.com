@@ -283,8 +283,151 @@ export default function Technology() {
           text-align: left;
         }
 
+        /* Types of Crops Section */
+        .types-of-crops-section {
+          background: #f8f9fa;
+          padding: 4rem 5%;
+        }
+
+        .crops-header {
+          text-align: center;
+          margin-bottom: 4rem;
+        }
+
+        .crops-badge {
+          display: inline-block;
+          background: linear-gradient(135deg, #3B4FB8 0%, #52A020 100%);
+          color: white;
+          padding: 0.5rem 1.5rem;
+          border-radius: 50px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          margin-bottom: 1.5rem;
+        }
+
+        .crops-title {
+          font-size: 3rem;
+          font-weight: 900;
+          color: #1a1a1a;
+          margin-bottom: 1rem;
+        }
+
+        .crops-subtitle {
+          font-size: 1.2rem;
+          color: #666;
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .crops-grid-modern {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 2rem;
+          max-width: 1400px;
+          margin: 0 auto;
+        }
+
+        .crop-card-modern {
+          position: relative;
+          height: 280px;
+          border-radius: 20px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          text-decoration: none;
+          display: block;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .crop-card-modern::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(59, 79, 184, 0.8) 0%, rgba(82, 160, 32, 0.8) 100%);
+          opacity: 0;
+          transition: opacity 0.4s ease;
+          z-index: 1;
+        }
+
+        .crop-card-modern:hover::before {
+          opacity: 1;
+        }
+
+        .crop-card-modern:hover {
+          transform: translateY(-12px) scale(1.02);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .crop-image-modern {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+
+        .crop-card-modern:hover .crop-image-modern {
+          transform: scale(1.1);
+        }
+
+        .crop-overlay-modern {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 1.5rem;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+          z-index: 2;
+          transform: translateY(0);
+          transition: transform 0.4s ease;
+        }
+
+        .crop-card-modern:hover .crop-overlay-modern {
+          transform: translateY(-10px);
+        }
+
+        .crop-name-modern {
+          color: #fff;
+          font-size: 1.3rem;
+          font-weight: 800;
+          margin: 0;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .crop-icon {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 50px;
+          height: 50px;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          z-index: 2;
+          opacity: 0;
+          transform: scale(0);
+          transition: all 0.4s ease;
+        }
+
+        .crop-card-modern:hover .crop-icon {
+          opacity: 1;
+          transform: scale(1);
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
+          .crops-grid-modern {
+            grid-template-columns: repeat(3, 1fr);
+          }
+
           .features-container {
             min-height: 700px;
           }
@@ -369,6 +512,19 @@ export default function Technology() {
         }
 
         @media (max-width: 768px) {
+          .crops-grid-modern {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+          }
+
+          .crop-card-modern {
+            height: 220px;
+          }
+
+          .crops-title {
+            font-size: 2rem;
+          }
+
           .technology-section {
             padding: 3rem 4%;
           }
@@ -423,6 +579,14 @@ export default function Technology() {
         }
 
         @media (max-width: 480px) {
+          .crops-grid-modern {
+            grid-template-columns: 1fr;
+          }
+
+          .crops-title {
+            font-size: 1.75rem;
+          }
+
           .features-title {
             font-size: 1.5rem;
           }
@@ -536,8 +700,56 @@ export default function Technology() {
         </div>
       </section>
 
+      {/* Types of Crops Section */}
+      <section className="types-of-crops-section">
+        <div className="crops-header">
+          <span className="crops-badge">Versatile Solutions</span>
+          <h2 className="crops-title">Types of Crops for Drone Spraying</h2>
+          <p className="crops-subtitle">
+            Our drone technology is optimized for a wide variety of crops
+          </p>
+        </div>
+        <div className="crops-grid-modern">
+          <a href="/crops/tea" className="crop-card-modern">
+            <span className="crop-icon">🌾</span>
+            <img src="https://i.pinimg.com/1200x/11/87/53/118753baa60bcbbb4eff16011f7dd964.jpg" alt="Tea" className="crop-image-modern" />
+            <div className="crop-overlay-modern">
+              <h3 className="crop-name-modern">Tea</h3>
+            </div>
+          </a>
+          <a href="/crops/paddy" className="crop-card-modern">
+            <span className="crop-icon">🌾</span>
+            <img src="https://i.pinimg.com/1200x/1a/06/26/1a062644fd9309daddd1764a29458335.jpg" alt="Paddy" className="crop-image-modern" />
+            <div className="crop-overlay-modern">
+              <h3 className="crop-name-modern">Paddy</h3>
+            </div>
+          </a>
+          <a href="/crops/cotton" className="crop-card-modern">
+            <span className="crop-icon">🌾</span>
+            <img src="https://i.pinimg.com/736x/bd/28/c0/bd28c000e8371a8a1c255efc7c865b70.jpg" alt="Cotton" className="crop-image-modern" />
+            <div className="crop-overlay-modern">
+              <h3 className="crop-name-modern">Cotton</h3>
+            </div>
+          </a>
+          <a href="/crops/wheat" className="crop-card-modern">
+            <span className="crop-icon">🌾</span>
+            <img src="https://i.pinimg.com/736x/a4/18/12/a4181249c14ce65cf17814ec6da03deb.jpg" alt="Wheat" className="crop-image-modern" />
+            <div className="crop-overlay-modern">
+              <h3 className="crop-name-modern">Wheat</h3>
+            </div>
+          </a>
+          <a href="/crops/vegetable" className="crop-card-modern">
+            <span className="crop-icon">🌾</span>
+            <img src="https://i.pinimg.com/1200x/2b/c5/03/2bc503b5209e55610398d2d904ffa834.jpg" alt="Vegetable" className="crop-image-modern" />
+            <div className="crop-overlay-modern">
+              <h3 className="crop-name-modern">Vegetable</h3>
+            </div>
+          </a>
+        </div>
+      </section>
+
       {/* How It Works Section */}
-      <section className="how-it-works-section">
+      <section id="how-it-works" className="how-it-works-section">
         <h2 className="how-it-works-title">How to Avail <span style={{ color: '#3B4FB8' }}>Vilv<img src="/o.png" alt="o" style={{ display: 'inline', height: '1em', verticalAlign: 'baseline', margin: '0', position: 'relative', top: '0.25em' }} />m</span> <span style={{ color: '#52A020' }}>Drones</span>
                 <sup style={{ fontSize: '0.5em', marginLeft: '2px' }}>™</sup>
                 <br />
