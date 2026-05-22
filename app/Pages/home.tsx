@@ -54,7 +54,7 @@ export default function Home() {
             <h1 className="hero-center-heading">
               Delivering effective crop spraying by <span className="accent">precision farming drones</span>
             </h1>
-<p className="hero-center-subtitle" style={{ transform: "translateX(190px)", color: "#ffffff", fontSize: "1.55rem", whiteSpace: "nowrap" }}>
+<p className="hero-center-subtitle" style={{ color: "#ffffff", fontSize: "1.55rem", textAlign: "center" }}>
   Increase Your Yield with Our Spraying Service
 </p>
             <div className="app-store-buttons">
