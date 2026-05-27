@@ -59,7 +59,8 @@ export default function VilvomFooter() {
               { label: "Home", href: "#home" },
               { label: "About Us", href: "#about" },
               { label: "Services", href: "#services" },
-              { label: "Contact Us", href: "/distributor-llp/contact" }
+              { label: "Contact Us", href: "/distributor-llp/contact" },
+              { label: "Privacy Policy", href: "/privacy-policy" }
             ].map((item) => (
               <a
                 key={item.label}
